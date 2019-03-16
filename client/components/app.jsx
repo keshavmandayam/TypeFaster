@@ -9,7 +9,8 @@ class App extends Component {
     this.state = {
       challenge: 'These are words that you would need to type.',
       typedValue: '',
-      displayValue: []
+      displayValue: [],
+      displayForm: true
     };
     this.handleInput = this.handleInput.bind(this);
   }
@@ -18,6 +19,9 @@ class App extends Component {
     this.checkAccuracy(event.target.value);
     let newState = this.state;
     newState.typedValue = event.target.value;
+    newState.typedValue.length === newState.challenge.length
+      ? (newState.displayForm = false)
+      : (newState.displayForm = true);
     this.setState(newState);
   }
   checkAccuracy(string) {
@@ -40,6 +44,7 @@ class App extends Component {
         <InputForm
           value={this.state.typedValue}
           handleInput={this.handleInput}
+          display={this.state.displayForm}
         />
       </div>
     );
