@@ -11,7 +11,7 @@ class Timer extends Component {
     clearInterval(this.countDown);
   }
   render() {
-    return <div>{this.props.time}</div>;
+    return <div>{`Time Left: ${this.props.time} seconds`}</div>;
   }
 }
 
