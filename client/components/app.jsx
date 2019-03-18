@@ -20,21 +20,21 @@ class App extends Component {
   }
 
   handleInput(event) {
-    if (this.state.timeLeft > 59) {
-      this.handleTime();
-      setInterval(this.handleTime, 1000);
-    }
     this.checkAccuracy(event.target.value);
     let newState = this.state;
     newState.typedValue = event.target.value;
     newState.typedValue.length === newState.challenge.length
       ? (newState.displayForm = false)
       : (newState.displayForm = true);
+    if (this.state.timeLeft > 59) {
+      this.handleTime();
+    }
     this.setState(newState);
   }
   handleTime() {
     let newState = this.state;
     newState.timeLeft > 0 ? (newState.timeLeft -= 1) : (newState.timeLeft = 0);
+    console.log(newState.timeLeft);
     this.setState(newState);
   }
   checkAccuracy(string) {
@@ -60,7 +60,13 @@ class App extends Component {
           display={this.state.displayForm}
         />
         <Status text={this.state.typedValue} />
-        <Timer time={this.state.timeLeft} />
+        {this.state.timeLeft < 60 &&
+        this.state.timeLeft > 0 &&
+        this.state.displayForm ? (
+          <Timer time={this.state.timeLeft} handleTime={this.handleTime} />
+        ) : (
+          <div>{this.state.timeLeft}</div>
+        )}
       </div>
     );
   }

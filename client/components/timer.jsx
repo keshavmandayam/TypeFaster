@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Timer(props) {
-  return <div>{props.time}</div>;
+class Timer extends Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.countDown = setInterval(this.props.handleTime, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.countDown);
+  }
+  render() {
+    return <div>{this.props.time}</div>;
+  }
 }
 
 export default Timer;
