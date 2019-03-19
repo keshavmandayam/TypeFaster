@@ -22,7 +22,7 @@ function Status(props) {
     <Main>
       <Padding>
         {!startedTyping
-          ? 'Start typing sample text to begin test'
+          ? 'Start typing sample text to begin test!'
           : 'Good luck!'}
       </Padding>
       {startedTyping && <Padding>{`Word count: ${props.text}`}</Padding>}

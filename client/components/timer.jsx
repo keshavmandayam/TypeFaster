@@ -6,7 +6,7 @@ const Main = styled.div`
   color: #565a4d;
   font-family: monospace;
   background: #c9d6dc;
-  font-size: 20px;
+  font-size: 60px;
   font-weight: bold;
   overflow: auto;
   width: 100%;
@@ -29,7 +29,7 @@ class Timer extends Component {
   render() {
     return (
       <Main>
-        <Padding>{`Time Left: ${this.props.time} seconds`}</Padding>
+        <Padding>{`${this.props.time} seconds`}</Padding>
       </Main>
     );
   }

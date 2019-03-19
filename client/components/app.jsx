@@ -76,7 +76,7 @@ class App extends Component {
   }
   wordCount(string) {
     let newState = this.state;
-    newState.wordCount = string.split(' ').length;
+    newState.wordCount = string.length > 0 ? string.split(' ').length : 0;
     this.setState(newState);
   }
   generateChallenge() {
