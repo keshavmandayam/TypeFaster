@@ -2,7 +2,7 @@
 
 This project is a typing test game where you can improve the speed of your typing and achieve your highest words per minutes or WPM!
 
-![Image](https://i.imgur.com/rmlgEdv.gif)
+![Imgur Image](https://i.imgur.com/rmlgEdv.gif)
 
 ### `npm install & yarn add styled-css-grid`
 
