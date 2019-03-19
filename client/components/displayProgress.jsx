@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-// Styling to represent accuracy of typed character
+
+// Standard and React styled components
 const inaccurateStyle = {
   color: '#f96363'
 };

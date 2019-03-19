@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+// React styled components
 const Main = styled.div`
   border: 1px;
   color: #565a4d;
@@ -15,7 +15,7 @@ const Main = styled.div`
 const Padding = styled.div`
   padding: 5px;
 `;
-
+// Utilizes setinterval and react life-cycle methods to achieve the effect of a countdown timer.
 class Timer extends Component {
   constructor(props) {
     super(props);

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//React styled components
 const TextBlock = styled.div`
   color: #565a4d;
   font-size: 16px;
@@ -17,6 +18,7 @@ const Instructions = styled.div`
   margin-bottom: 10px;
 `;
 
+// Basic representation of the data generated for user to try and emulate
 function Challenge(props) {
   return (
     <TextBlock>

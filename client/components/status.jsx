@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// React styled components
 const Main = styled.div`
   border: 1px;
   background: #565a4d;
@@ -15,7 +16,7 @@ const Main = styled.div`
 const Padding = styled.div`
   padding: 5px;
 `;
-
+// Displays Word Count or instructions to begin typing.
 function Status(props) {
   let startedTyping = props.text > 0 ? true : false;
   return (

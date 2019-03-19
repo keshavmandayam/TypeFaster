@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// React styled components
 const Main = styled.div`
   border: 1px;
   color: #565a4d;
@@ -16,6 +17,7 @@ const Padding = styled.div`
   padding: 5px;
 `;
 
+// Calculates and displays words per minute.
 function WordsPerMinute(props) {
   let timeElapsed = 60 - props.timeLeft;
   let multiplier = 60 / timeElapsed;

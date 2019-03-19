@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// React styled components
 const TextArea = styled.textarea`
   border: 1px;
   border-color: #565a4d;
@@ -29,7 +30,7 @@ const Instructions = styled.div`
   overflow: auto;
   margin-bottom: 10px;
 `;
-
+// Shows form when required, otherwise a congratulatory message or a notification of failure.
 function InputForm(props) {
   if (!props.display && props.time === 0) {
     return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+// React styled components
 const Main = styled.div`
   border: 1px;
   color: #565a4d;
@@ -16,6 +17,7 @@ const Padding = styled.div`
   padding: 5px;
 `;
 
+// Static representation of timer prior to countdown. Gives user expected time requirements.
 class TimerStatic extends Component {
   constructor(props) {
     super(props);

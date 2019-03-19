@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+// Chose to use react styled components along with css grid as opposted to standard css
 import styled from 'styled-components';
 import { Grid, Cell } from 'styled-css-grid';
+// Data generation api used to create block of text for the typing test
 import faker from 'faker';
+// All of the React components
 import Challenge from './challenge.jsx';
 import InputForm from './inputForm.jsx';
 import DisplayProgress from './displayProgress.jsx';
@@ -11,6 +14,7 @@ import TimerStatic from './timerStatic.jsx';
 import WordsPerMinute from './wordsPerMinute.jsx';
 import Accuracy from './accuracy.jsx';
 
+// Stylized div for Title or Header
 const Title = styled.div`
   background-color: #565a4d;
   height: 60px;
@@ -38,7 +42,7 @@ class App extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleTime = this.handleTime.bind(this);
   }
-
+  // Handles user input in the textarea block
   handleInput(event) {
     this.checkAccuracy(event.target.value);
     this.wordCount(event.target.value);
@@ -53,11 +57,13 @@ class App extends Component {
     }
     this.setState(newState);
   }
+  // Used to update remaining time in the state
   handleTime() {
     let newState = this.state;
     newState.timeLeft > 0 ? (newState.timeLeft -= 1) : (newState.timeLeft = 0);
     this.setState(newState);
   }
+  // Checks for accuracy and drives character colorization
   checkAccuracy(string) {
     const displayArr = [];
     let wrongChars = 0;
@@ -74,11 +80,13 @@ class App extends Component {
     newState.accuracy = accuracy;
     this.setState(newState);
   }
+  // Updates state variable for word count. Also required info for WPM.
   wordCount(string) {
     let newState = this.state;
     newState.wordCount = string.length > 0 ? string.split(' ').length : 0;
     this.setState(newState);
   }
+  // Uses faker api to generate multiple sentences for user to try and type
   generateChallenge() {
     let challenge = faker.hacker.phrase();
     for (let i = 0; i < 5; i++) {
@@ -86,13 +94,14 @@ class App extends Component {
     }
     return challenge;
   }
-
+  // One page load, updates the 'challenge component' with a new text block
   componentDidMount() {
     let newState = this.state;
     newState.challenge = this.generateChallenge();
     this.setState(newState);
   }
-
+  // The Grid and Cell components come from styled-css-grid to allow CSS grid functionality with
+  // react styled-components. Remaining components were developed for this project.
   render() {
     return (
       <Grid columns={'2fr 1fr'} rows={'minmax(60px,auto) 1fr'}>
