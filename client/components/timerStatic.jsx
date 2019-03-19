@@ -16,23 +16,17 @@ const Padding = styled.div`
   padding: 5px;
 `;
 
-class Timer extends Component {
+class TimerStatic extends Component {
   constructor(props) {
     super(props);
-  }
-  componentDidMount() {
-    this.countDown = setInterval(this.props.handleTime, 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.countDown);
   }
   render() {
     return (
       <Main>
-        <Padding>{`Time Left: ${this.props.time} seconds`}</Padding>
+        <Padding>{`Countdown: ${this.props.time} seconds`}</Padding>
       </Main>
     );
   }
 }
 
-export default Timer;
+export default TimerStatic;

@@ -5,4 +5,4 @@ const port = 3000;
 
 app.use(express.static(path.join('././public')));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Server listening on port ${port}!`));

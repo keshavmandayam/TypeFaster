@@ -1,11 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const TextBlock = styled.div`
+  color: #565a4d;
+  font-size: 16px;
+  font-family: monospace;
+  background-color: #c9d6dc;
+  padding: 10px;
+  overflow: auto;
+`;
+
+const Instructions = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+  overflow: auto;
+  margin-bottom: 10px;
+`;
 
 function Challenge(props) {
   return (
-    <div>
-      <div>Type the Following:</div>
+    <TextBlock>
+      <Instructions>Type the Following</Instructions>
       <div>{props.challenge}</div>
-    </div>
+    </TextBlock>
   );
 }
 
